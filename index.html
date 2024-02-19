@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spotify Clone</title>
+</head>
+<style>
+    /* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  
+  body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  /* Header */
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #121212;
+    height: 80px;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 30px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  
+  .search-bar input {
+    width: 250px;
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .search-bar button {
+    width: 40px;
+    height: 40px;
+    background-color: #1db954;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .search-bar button i {
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+  }
+  
+  .nav ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav li {
+    list-style: none;
+    margin-right: 20px;
+  }
+  
+  .nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  /* Main */
+  
+  .main {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 80px);
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #181818;
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar li {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  .content {
+    width: calc(100vw - 200px);
+    padding: 20px;
+  }
+  
+  .now-playing {
+    display: flex;
+    align-items: center;
+  }
+  
+  .album-art {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    margin-right: 20px;
+  }
+  
+  .track-info {
+    width: 300px;
+  }
+  
+  .track-info h1 {
+    font-size: 24px;
+  }
+  
+  .track-info h2 {
+    font-size: 18px;
+  }
+  
+  .track-info p {
+    font-size: 14px;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+  }
+  
+  .controls button {
+    width: 30px;
+    height: 30px;
+    background-color: #1db954;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .controls button i {
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .recommendations {
+    margin-top: 20px;
+  }
+  
+  .recommendations h2 {
+    font-size: 24px;
+  }
+  
+  .recommendations ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .recommendations li {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .recommendations li a {
+    text-decoration: none;
+    color: #1db954;
+    font-size: 14px;
+  }
+  
+  /* Footer */
+  
+  .footer {
+    height: 40px;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+</style>
+<body>
+<div class="header">
+    <div class="logo">
+    <img src="spotify-logo.png" alt="Spotify logo">
+    </div>
+    <div class="search-bar">
+    <input type="text" placeholder="Search">
+    <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="nav">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse</a></li>
+        <li><a href="#">Radio</a></li>
+    </ul>
+    </div>
+</div>
+<div class="main">
+    <div class="sidebar">
+    <ul>
+        <li><a href="#">My Library</a></li>
+        <li><a href="#">Playlists</a></li>
+        <li><a href="#">Artists</a></li>
+        <li><a href="#">Albums</a></li>
+    </ul>
+    </div>
+    <div class="content">
+    <div class="now-playing">
+        <div class="album-art">
+        <img src="album-art.jpg" alt="Album art">
+        </div>
+        <div class="track-info">
+        <h1>Song Title</h1>
+        <h2>Artist Name</h2>
+        <p>Album Name</p>
+        </div>
+        <div class="controls">
+        <button type="button" class="play-pause"><i class="fas fa-play"></i></button>
+        <button type="button" class="next"><i class="fas fa-forward"></i></button>
+        <button type="button" class="previous"><i class="fas fa-backward"></i></button>
+        </div>
+    </div>
+    <div class="recommendations">
+        <h2>Recommended for You</h2>
+        <ul>
+        <li><a href="#">Song Title</a></li>
+        <li><a href="#">Song Title</a></li>
+        <li><a href="#">Song Title</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+<div class="footer">
+    <p>Copyright &copy; 2023 Spotify</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
